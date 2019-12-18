@@ -1,0 +1,1 @@
+morphomap at each section extracts two sets of semilandmarks, cortical thickness, cortical area and the parameters useful for cross-sectional Geometry. morphomap returns also 2D and 3D cortical maps. The morphomap package from a single input (an oriented 3D mesh) is capable to produce the output suitable for thickness geometry, shape analysis and cross-sectional geometry.  
