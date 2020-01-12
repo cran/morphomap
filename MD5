@@ -1,4 +1,4 @@
-d2d2df1584272ded5ae2a492d0a23b8b *DESCRIPTION
+c6f28a8b5f4031f1391d697781a34aa3 *DESCRIPTION
 3df81bebf53ca08e99bb7cf8cecdab3e *NAMESPACE
 2af6f43bc05cbeb800b274ad3f0dc6ac *R/HomFem38023.R
 5dad4d9f1fab3f3982003b86c17bb4c9 *R/PanFem27713.R
@@ -26,7 +26,7 @@ e072de353dfc45607453d35d8d9216e0 *R/morphomapRectangle.R
 78f88ae706500431a2e23cb575873ddc *R/morphomapTranslate.R
 fe0a33320fce3e655046d2d23d203ed1 *R/morphomapZmoment.R
 576bb5505ba825a2f6fd5f8722ae167b *README.md
-4b1f1742a498f01e363d10957ceabb6f *data/HomFem38023.rda
+f98a6bc9efb03f9592837aa1d4b40f23 *data/HomFem38023.rda
 b2ab7ad0cff913d902886634a5bb13c0 *data/PanFem27713.rda
 9c140b218a8068e74dba4f048623be8d *data/datalist
 404594fb1ffef746a43071e4f11351a1 *man/HomFem38023.Rd
