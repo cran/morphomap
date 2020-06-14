@@ -4,10 +4,23 @@
 \alias{morphomap2Dmap}
 \title{morphomap2Dmap}
 \usage{
-morphomap2Dmap(morphomap.shape, rem.out = FALSE, fac.out = 0.5,
-  smooth = FALSE, scale = TRUE, smooth.iter = 5, gamMap = FALSE,
-  nrow = 90, ncol = 100, gdl = 250, method = "equiangular",
-  unwrap = "A", plot = TRUE, pal = blue2green2red(101), aspect = 2)
+morphomap2Dmap(
+  morphomap.shape,
+  rem.out = FALSE,
+  fac.out = 0.5,
+  smooth = FALSE,
+  scale = TRUE,
+  smooth.iter = 5,
+  gamMap = FALSE,
+  nrow = 90,
+  ncol = 100,
+  gdl = 250,
+  method = "equiangular",
+  unwrap = "A",
+  plot = TRUE,
+  pal = blue2green2red(101),
+  aspect = 2
+)
 }
 \arguments{
 \item{morphomap.shape}{list: output from morphomapShape function}
@@ -44,6 +57,10 @@ morphomap2Dmap(morphomap.shape, rem.out = FALSE, fac.out = 0.5,
 dataframe dataframe for colormap production
 
 2Dmap thickness color map
+
+gamoutput output from GAM
+
+data input used to build the GAM map
 }
 \description{
 Create a 2D cortical thickness map
@@ -53,7 +70,7 @@ Create a 2D cortical thickness map
 library(colorRamps)
 #morphomap on a human femur bone
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023, param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-380.23
@@ -73,7 +90,7 @@ bone2Dmap<-morphomap2Dmap(morphomap.shape=shapeSections,gam=TRUE,
 
 #morphomap on a chimpanzee femur bone
 data(PanFem27713)
-meshes<-morphomapSegm(PanFem27713)
+meshes<-morphomapSegm(PanFem27713, param1=3)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-277.13

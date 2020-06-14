@@ -19,7 +19,7 @@
 #' \donttest{
 #' #morphomap on a human femur bone
 #' data(HomFem38023)
-#' meshes<-morphomapSegm(HomFem38023)
+#' meshes<-morphomapSegm(HomFem38023, param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-380.23
@@ -43,7 +43,7 @@
 #' 
 #' #morphomap on a chimpanzee femur bone
 #' data(PanFem27713)
-#' meshes<-morphomapSegm(PanFem27713)
+#' meshes<-morphomapSegm(PanFem27713, param1=3)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-277.13

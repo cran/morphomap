@@ -17,7 +17,7 @@
 #' library(lattice)
 #' library(colorRamps)
 #' data(HomFem38023)
-#' meshes<-morphomapSegm(HomFem38023)
+#' meshes<-morphomapSegm(HomFem38023, param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-380.23
@@ -30,7 +30,7 @@
 #' contourplot(dataDF[, 3] ~ dataDF[, 1] + dataDF[, 2],
 #'             col.regions=blue2green2red(101),region=TRUE,
 #'             colorkey=list(at=seq(0,1,length.out = 100)),
-#'             scales = list(x = list(at = seq(0,100,length.out = 5), labels = c("L","A","M","P","L"), 
+#'             scales = list(x = list(at = seq(0,100,length.out = 5), c("A","M","P","L","A"), 
 #'             alternating = 1)),asp=1.5,cuts=20,xlab="femur margin",ylab="biomechanical length")
 #' 
 #' }

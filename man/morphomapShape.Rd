@@ -4,8 +4,14 @@
 \alias{morphomapShape}
 \title{morphomapShape}
 \usage{
-morphomapShape(morphomap.core, num.land, sects_vector, cent.out = "CCA",
-  delta = 0.1, side = "left")
+morphomapShape(
+  morphomap.core,
+  num.land,
+  sects_vector,
+  cent.out = "CCA",
+  delta = 0.1,
+  side = "left"
+)
 }
 \arguments{
 \item{morphomap.core}{list: morphomap.core object}
@@ -44,57 +50,43 @@ Tool for the extraction of equiangular landmarks on the entire diaphysis
 }
 \examples{
 \donttest{
+library(morphomap)
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023, param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-380.23
-rawSections<-morphomapCore(out.sur=perMesh,
-inn.sur=endMesh,num.sect=61,
+rawSections<-morphomapCore(out.sur=perMesh, inn.sur=endMesh, num.sect=61 ,
 mech.len = mech_length, start = 0.2,end=0.8,num.points = 500)
 # Shape coordinates defining as center the barycenter of the cortical area
-shapeSections_CCA<-morphomapShape(rawSections,21,sects_vector=NULL, cent.out="CCA",delta=0.1)
-sect1_ext<-shapeSections_CCA$`2D_out`[,,1]
-sect1_int<-shapeSections_CCA$`2D_inn`[,,1]
-centroid_CCA<-morphomapCentroid(rawSections$`2D_out`[,,1],rawSections$`2D_inn`[,,1], delta=0.1)
-plot(sect1_ext,type="b",asp=1,xlab="x",ylab="y",main="Section 1 - CCA")
-points(sect1_int,type="b",asp=1)
-points(centroid_CCA[1],centroid_CCA[2],pch=19)
-start<-c(centroid_CCA[1],centroid_CCA[2])
-for(i in 1:21){
-  to_e<-sect1_ext[i,]
-  points(rbind(start,to_e),type="l")
-}
-
+shapeSections_CCA<-morphomapShape(rawSections,21,sects_vector=NULL, cent.out="CCA",
+delta=0.1,side="left")
+# First the first cross section (2D)
+morphomapPlotShape(shapeSections_CCA,dims=2,cent.out="CCA",vecs=1)
+# First the first cross section (3D)
+morphomapPlotShape(shapeSections_CCA,dims=3,size=0.5,lwd=2,cent.out="I",vecs=1)
+# The entire diaphysis (3D)
+morphomapPlotShape(shapeSections_CCA,dims=3,size=0.5,lwd=2,cent.out="I",vecs=NULL)
 # Shape coordinates defining as center the barycenter of the external perimeter
-shapeSections_E<-morphomapShape(rawSections,21,sects_vector=NULL, cent.out="E",
+shapeSections_E<-morphomapShape(rawSections, 21, sects_vector=NULL, cent.out="E", 
 delta=0.1, side="left")
-sect1_ext<-shapeSections_E$`2D_out`[,,1]
-sect1_int<-shapeSections_E$`2D_inn`[,,1]
-centroid_E<-colMeans(rawSections$`2D_out`[,,1])
-plot(sect1_ext,type="b",asp=1,xlab="x",ylab="y",main="Section 1 - E")
-points(sect1_int,type="b",asp=1)
-points(centroid_E[1],centroid_E[2],pch=19)
-start<-c(centroid_E[1],centroid_E[2])
-for(i in 1:21){
-  to_e<-sect1_ext[i,]
-  points(rbind(start,to_e),type="l")
-}
+# First the first cross section (2D)
+morphomapPlotShape(shapeSections_E,dims=2,cent.out="E",vecs=1)
+# First the first cross section (3D)
+morphomapPlotShape(shapeSections_E,dims=3,size=0.5,lwd=2,cent.out="I",vecs=1)
+# The entire diaphysis (3D)
+morphomapPlotShape(shapeSections_E,dims=3,size=0.5,lwd=2,cent.out="I",vecs=NULL)
 
-# Shape coordinates defining as center the barycenter of the internal perimetershape
-shapeSections_I<-morphomapShape(rawSections,21,sects_vector=NULL, cent.out="I",
+# Shape coordinates defining as center the barycenter of the internal perimeter 
+shapeSections_I<-morphomapShape(rawSections, 21, sects_vector=NULL, cent.out="I", 
 delta=0.1, side="left")
-sect1_ext<-shapeSections_I$`2D_out`[,,1]
-sect1_int<-shapeSections_I$`2D_inn`[,,1]
-centroid_I<-colMeans(rawSections$`2D_inn`[,,1])
-plot(sect1_ext,type="b",asp=1,xlab="x",ylab="y",main="Section 1 - I")
-points(sect1_int,type="b",asp=1)
-points(centroid_I[1],centroid_I[2],pch=19)
-start<-c(centroid_I[1],centroid_I[2])
-for(i in 1:21){
-to_e<-sect1_ext[i,]
-points(rbind(start,to_e),type="l")
-}
+# First the first cross section (2D)
+morphomapPlotShape(shapeSections_I,dims=2,lines=TRUE,cent.out="I",vecs=1)
+# First the first cross section (3D)
+morphomapPlotShape(shapeSections_I,dims=3,lines=TRUE,centroid=TRUE, size=0.5,
+lwd=2,cent.out="I",vecs=1)
+# The entire diaphysis (3D)
+morphomapPlotShape(shapeSections_I,dims=3,size=0.5,lwd=2,cent.out="I",vecs=NULL)
 }
 }
 \author{

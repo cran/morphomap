@@ -1,7 +1,7 @@
 Package: morphomap
 Type: Package
 Title: Morphometric Maps, Bone Landmarking and Cross Sectional Geometry
-Version: 1.1
+Version: 1.2
 Authors@R: c(
 	person(given="Antonio", family="Profico",email = "antonio.profico@gmail.com", role=c("aut", "cre")),
 	person(given="Luca", family="Bondioli", role=c("aut")),
@@ -19,9 +19,9 @@ Imports: Arothron (>= 1.0), lattice (>= 0.2), mgcv (>= 1.8), Rvcg (>=
 License: GPL-2
 Encoding: UTF-8
 LazyLoad: yes
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 NeedsCompilation: no
-Packaged: 2020-01-12 14:18:51 UTC; Arothron
+Packaged: 2020-06-14 16:35:11 UTC; Arothron
 Author: Antonio Profico [aut, cre],
   Luca Bondioli [aut],
   Pasquale Raia [aut],
@@ -30,4 +30,4 @@ Author: Antonio Profico [aut, cre],
   Damiano Marchi [aut]
 Maintainer: Antonio Profico <antonio.profico@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-01-12 15:40:06 UTC
+Date/Publication: 2020-06-14 18:30:03 UTC

@@ -21,7 +21,10 @@ Shoelace formula to calculate the area of a closed outline
 }
 \examples{
 extsec<-morphomapCircle(10,100)
+#shoelace method
 area<-morphomapArea(extsec, method="shoelace")
+#delta method
+area<-morphomapArea(extsec, method="delta",delta=0.01)
 }
 \author{
 Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi

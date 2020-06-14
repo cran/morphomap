@@ -4,14 +4,14 @@
 \alias{morphomapSegm}
 \title{morphomapSegm}
 \usage{
-morphomapSegm(mesh, views = 30, param1 = 3, num.cores = NULL)
+morphomapSegm(mesh, views = 30, param1 = 4, num.cores = NULL)
 }
 \arguments{
 \item{mesh}{object of class mesh3d}
 
 \item{views}{numeric: number of points of view}
 
-\item{param1}{numeric: first parameter for spherical flipping}
+\item{param1}{numeric: first parameter for spherical flipping (usually ranged between 3 and 4)}
 
 \item{num.cores}{numeric: number of cores}
 }
@@ -23,12 +23,15 @@ internal mesh3d of the not visible facets from the points of view
 \description{
 Separate a mesh from its visible and not visible components by using CA-LSE method
 }
+\details{
+The result could be affected by the value set in the \code{param1} argument. Before running \code{morphomapCore} please the periosteal and endosteal surfaces.
+}
 \examples{
 \donttest{
 #automatic separation of external and medullar femur components
 library(rgl)
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023,param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 open3d()

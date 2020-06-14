@@ -9,7 +9,7 @@
 #' \donttest{
 #' #morphomap on a human femur bone
 #' data(HomFem38023)
-#' meshes<-morphomapSegm(HomFem38023)
+#' meshes<-morphomapSegm(HomFem38023, param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-380.23

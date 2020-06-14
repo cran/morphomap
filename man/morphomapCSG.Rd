@@ -4,9 +4,18 @@
 \alias{morphomapCSG}
 \title{morphomapCSG}
 \usage{
-morphomapCSG(cp, mp, translate = FALSE, center = c("I", "E", "CCA"),
-  delta = 0.1, Cx = NULL, Cy = NULL, I_xy = TRUE,
-  I_minmax = TRUE, Zxy = TRUE)
+morphomapCSG(
+  cp,
+  mp,
+  translate = FALSE,
+  center = c("I", "E", "CCA"),
+  delta = 0.1,
+  Cx = NULL,
+  Cy = NULL,
+  I_xy = TRUE,
+  I_minmax = TRUE,
+  Zxy = TRUE
+)
 }
 \arguments{
 \item{cp}{matrix: coordinates of the external outline}
@@ -85,7 +94,7 @@ Tool for Cross-sectional geometry
 \donttest{
 #calculation of csg parameter on a human femur cross section
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023, param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-380.23
@@ -118,7 +127,7 @@ plot(c(1:61),results[,24],type="b",main="Theta",cex=1,
 
 #calculation of csg parameter on a chimpanzee femur cross section
 data(PanFem27713)
-meshes<-morphomapSegm(PanFem27713)
+meshes<-morphomapSegm(PanFem27713, param1=3)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-277.13

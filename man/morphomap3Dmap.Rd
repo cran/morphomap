@@ -4,9 +4,19 @@
 \alias{morphomap3Dmap}
 \title{morphomap3Dmap}
 \usage{
-morphomap3Dmap(morphomap.shape, out.sur, method = "equiangular",
-  scale = TRUE, rem.out = FALSE, fac.out = 0.5, smooth = FALSE,
-  smooth.iter = 5, k = 5, plot = TRUE, pal = blue2green2red(101))
+morphomap3Dmap(
+  morphomap.shape,
+  out.sur,
+  method = "equiangular",
+  scale = TRUE,
+  rem.out = FALSE,
+  fac.out = 0.5,
+  smooth = FALSE,
+  smooth.iter = 5,
+  k = 5,
+  plot = TRUE,
+  pal = blue2green2red(101)
+)
 }
 \arguments{
 \item{morphomap.shape}{list: output from morphomapShape function}
@@ -43,7 +53,7 @@ Plot a 3D thickness map in four different anatomical views
 \donttest{
 #morphomap on a human femur bone
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023, param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-380.23
@@ -67,7 +77,7 @@ shade3d(perMesh,col=bone3Dmap$cols,specular="black")
 
 #morphomap on a chimpanzee femur bone
 data(PanFem27713)
-meshes<-morphomapSegm(PanFem27713)
+meshes<-morphomapSegm(PanFem27713, param1=3)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-277.13

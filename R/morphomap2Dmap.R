@@ -18,13 +18,15 @@
 #' @param aspect numeric: axis ratio for 2D morphometric map
 #' @return dataframe dataframe for colormap production
 #' @return 2Dmap thickness color map
+#' @return gamoutput output from GAM
+#' @return data input used to build the GAM map
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
 #' \donttest{
 #' library(colorRamps)
 #' #morphomap on a human femur bone
 #' data(HomFem38023)
-#' meshes<-morphomapSegm(HomFem38023)
+#' meshes<-morphomapSegm(HomFem38023, param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-380.23
@@ -44,7 +46,7 @@
 #' 
 #' #morphomap on a chimpanzee femur bone
 #' data(PanFem27713)
-#' meshes<-morphomapSegm(PanFem27713)
+#' meshes<-morphomapSegm(PanFem27713, param1=3)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-277.13
@@ -143,5 +145,10 @@ morphomap2Dmap<-function (morphomap.shape,rem.out = FALSE,
     }
     mat <- data
   }
-  out <- list(dataframe = mat, `2Dmap` = map)
+  if(gamMap==TRUE){
+  out <- list(dataframe = mat, `2Dmap` = map,gamoutput=m1,data=data)}
+  if(gamMap==FALSE){
+  out <- list(dataframe = mat, `2Dmap` = map,gamoutput=NULL,data=data)}
+
+  
 }

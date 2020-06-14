@@ -8,7 +8,10 @@
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
 #' extsec<-morphomapCircle(10,100)
+#' #shoelace method
 #' area<-morphomapArea(extsec, method="shoelace")
+#' #delta method
+#' area<-morphomapArea(extsec, method="delta",delta=0.01)
 #' @export
 
 morphomapArea<-function (p,delta=0.1,method="shoelace") 

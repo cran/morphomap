@@ -14,12 +14,12 @@
 #' extsec<-morphomapRectangle(10,6,100)
 #' intsec<-morphomapRectangle(8,4,100)
 #' rimg<-morphomapRaster(extsec,intsec,pixel=0.1,save=FALSE)
-#' plot(rimg)
+#' plot(rimg,col=gray(0:2/2))
 #' #circular section
 #' extsec<-morphomapCircle(10,100)
 #' intsec<-morphomapCircle(8,100)
 #' rimg<-morphomapRaster(extsec,intsec,pixel=0.1,save=FALSE)
-#' plot(rimg)
+#' plot(rimg,col=gray(0:2/2))
 #' @export
 
 morphomapRaster<-function(cp,mp,pixel=1,filename,save=FALSE){

@@ -4,8 +4,7 @@
 \alias{morphomapFlip}
 \title{morphomapFlip}
 \usage{
-morphomapFlip(mat, param1 = 0.8, param2 = 10, radius.fact = 1.5,
-  npovs = 100)
+morphomapFlip(mat, param1 = 0.8, param2 = 10, radius.fact = 1.5, npovs = 100)
 }
 \arguments{
 \item{mat}{numeric matrix: coordinates of the bi-dimensional configuration}

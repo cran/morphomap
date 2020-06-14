@@ -9,33 +9,37 @@
 #' @param height numeric: height of the picture
 #' @param pointsize numeric: pointsize of plotted text
 #' @param res numeric: the nominal resolution in ppi which will be recorded 
+#' @param colthk specify the color for the numbers
+#' @param collbs specify the color for the labels
 #' @param dirpath character: path of the directory where the pictures will be saved
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
 #' \donttest{
 #' #export picture from a human femur bone
 #' data(HomFem38023)
-#' meshes<-morphomapSegm(HomFem38023)
+#' meshes<-morphomapSegm(HomFem38023, param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-380.23
 #' rawSections<-morphomapCore(out.sur=perMesh,
 #'                            inn.sur=endMesh,num.sect=11,mech.len = mech_length, 
 #'                            start = 0.2,end=0.8)
-#' shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",delta=0.5)
+#' shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",
+#' delta=0.5, side="left")
 #' morphomapPic(rawSections,shapeSections,full=TRUE,dirpath=tempdir(),
 #'             width=2500,height=2500)
 #' 
 #' #export picture from a chimpanzee femur bone
 #' data(PanFem27713)
-#' meshes<-morphomapSegm(PanFem27713)
+#' meshes<-morphomapSegm(PanFem27713, param1=3)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-277.13
 #' rawSections<-morphomapCore(out.sur=perMesh,
 #'                            inn.sur=endMesh,num.sect=11,mech.len = mech_length, 
 #'                            start = 0.2,end=0.8)
-#' shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",delta=0.5)
+#' shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",delta=0.5,
+#'  side="left")
 #' morphomapPic(rawSections,shapeSections,full=TRUE,dirpath=tempdir(),
 #'              width=2500,height=2500)
 #' }
@@ -43,7 +47,7 @@
 
 morphomapPic<-function (morphomap.core,morphomap.shape, vector = NULL, full = TRUE,
                         width=1500,height=1500,
-                        pointsize = 12, res=300,dirpath = tempdir()) 
+                        pointsize = 12, res=300,colthk="red",collbs="blue", dirpath = tempdir()) 
 {
   out.lines <- morphomap.core$`2D_out`
   in.lines <- morphomap.core$`2D_inn`
@@ -95,33 +99,33 @@ morphomapPic<-function (morphomap.core,morphomap.shape, vector = NULL, full = TR
       polygon(out.lines[, , i], col = "black")
       polygon(in.lines[, , i], col = "white")
       points(rbind(alpm_o[1, , i], alpm_i[1, , i]), type = "l", 
-             col = "red", lwd = 2)
+             col = colthk, lwd = 2)
       text(alpm_o[1, 1, i], alpm_o[1, 2, i], labels = diffs[1], 
-           col = "red", pos = 3)
+           col = colthk, pos = 3)
       text(mean(alpm_o[1, 1, i], alpm_i[1, 1, i]), mean(alpm_o[1, 
                                                                2, i], alpm_i[1, 2, i]) * 0.95, labels = "L", 
-           col = "white", pos = 2, lwd = 4, cex = 1.5)
+           col = collbs, pos = 2, lwd = 4, cex = 1.5)
       points(rbind(alpm_o[2, , i], alpm_i[2, , i]), type = "l", 
-             col = "red", lwd = 2)
+             col = colthk, lwd = 2)
       text(alpm_o[2, 1, i], alpm_o[2, 2, i], labels = diffs[2], 
-           col = "red", pos = 3)
+           col = colthk, pos = 3)
       text(mean(alpm_o[2, 1, i], alpm_i[2, 1, i]), mean(alpm_o[2, 
                                                                2, i], alpm_i[2, 2, i]) * 0.95, labels = "A", 
-           col = "white", pos = 2, lwd = 4, cex = 1.5)
+           col = collbs, pos = 2, lwd = 4, cex = 1.5)
       points(rbind(alpm_o[3, , i], alpm_i[3, , i]), type = "l", 
-             col = "red", lwd = 2)
+             col = colthk, lwd = 2)
       text(alpm_o[3, 1, i], alpm_o[3, 2, i], labels = diffs[3], 
-           col = "red", pos = 3)
+           col = colthk, pos = 3)
       text(mean(alpm_o[3, 1, i], alpm_i[3, 1, i]), mean(alpm_o[3, 
                                                                2, i], alpm_i[3, 2, i]) * 0.95, labels = "M", 
-           col = "white", pos = 4, lwd = 4, cex = 1.5)
+           col = collbs, pos = 4, lwd = 4, cex = 1.5)
       points(rbind(alpm_o[4, , i], alpm_i[4, , i]), type = "l", 
-             col = "red", lwd = 2)
+             col = colthk, lwd = 2)
       text(alpm_o[4, 1, i], alpm_o[4, 2, i], labels = diffs[4], 
-           col = "red", pos = 1)
+           col = colthk, pos = 1)
       text(mean(alpm_o[4, 1, i], alpm_i[4, 1, i]), mean(alpm_o[4, 
                                                                2, i], alpm_i[4, 2, i]) * 1.05, labels = "P", 
-           col = "white", pos = 4, lwd = 4, cex = 1.5)
+           col = collbs, pos = 4, lwd = 4, cex = 1.5)
       xy_p <- rbind(c((xlim[1] + abs(xlim[1] * 0.04)), 
                       (ylim[1] + abs(ylim[1] * 0.025))), c((xlim[1] + 
                                                               (abs(xlim[1] * 0.04) + 10)), (ylim[1] + abs(ylim[1] * 

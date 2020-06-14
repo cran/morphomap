@@ -30,5 +30,8 @@ morphomapMoment<-function(cp,mp,delta=0.1){
   Ix<-sum((grid_sect[sel,2]^2)*delta2)
   Iy<-sum((grid_sect[sel,1]^2)*delta2)  
   Ixy<-sum((grid_sect[sel,1]*grid_sect[sel,2])*delta2)
+  names(Ix)<-"Ix"
+  names(Iy)<-"Iy"
+  names(Ixy)<-"Ixy"
   return(c(Ix,Iy,Ixy))
 }

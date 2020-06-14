@@ -4,9 +4,19 @@
 \alias{morphomapPic}
 \title{morphomapPic}
 \usage{
-morphomapPic(morphomap.core, morphomap.shape, vector = NULL,
-  full = TRUE, width = 1500, height = 1500, pointsize = 12,
-  res = 300, dirpath = tempdir())
+morphomapPic(
+  morphomap.core,
+  morphomap.shape,
+  vector = NULL,
+  full = TRUE,
+  width = 1500,
+  height = 1500,
+  pointsize = 12,
+  res = 300,
+  colthk = "red",
+  collbs = "blue",
+  dirpath = tempdir()
+)
 }
 \arguments{
 \item{morphomap.core}{list: morphomap.core object}
@@ -25,6 +35,10 @@ morphomapPic(morphomap.core, morphomap.shape, vector = NULL,
 
 \item{res}{numeric: the nominal resolution in ppi which will be recorded}
 
+\item{colthk}{specify the color for the numbers}
+
+\item{collbs}{specify the color for the labels}
+
 \item{dirpath}{character: path of the directory where the pictures will be saved}
 }
 \description{
@@ -34,27 +48,29 @@ Save the sections defined via morphomapShape or morphomapCore
 \donttest{
 #export picture from a human femur bone
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023, param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-380.23
 rawSections<-morphomapCore(out.sur=perMesh,
                            inn.sur=endMesh,num.sect=11,mech.len = mech_length, 
                            start = 0.2,end=0.8)
-shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",delta=0.5)
+shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",
+delta=0.5, side="left")
 morphomapPic(rawSections,shapeSections,full=TRUE,dirpath=tempdir(),
             width=2500,height=2500)
 
 #export picture from a chimpanzee femur bone
 data(PanFem27713)
-meshes<-morphomapSegm(PanFem27713)
+meshes<-morphomapSegm(PanFem27713, param1=3)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-277.13
 rawSections<-morphomapCore(out.sur=perMesh,
                            inn.sur=endMesh,num.sect=11,mech.len = mech_length, 
                            start = 0.2,end=0.8)
-shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",delta=0.5)
+shapeSections<-morphomapShape(rawSections,250,sects_vector=NULL,cent.out="CCA",delta=0.5,
+ side="left")
 morphomapPic(rawSections,shapeSections,full=TRUE,dirpath=tempdir(),
              width=2500,height=2500)
 }

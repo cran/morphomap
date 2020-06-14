@@ -4,10 +4,20 @@
 \alias{morphomapCore}
 \title{morphomapCore}
 \usage{
-morphomapCore(out.sur = out.sur, inn.sur = inn.sur, num.sect = 61,
-  mech.len, clean_int_out = TRUE, param1 = 0.5, radius.fact = 2.5,
-  npovs = 100, num.points = 500, start = 0.2, end = 0.8,
-  print.progress = TRUE)
+morphomapCore(
+  out.sur = out.sur,
+  inn.sur = inn.sur,
+  num.sect = 61,
+  mech.len,
+  clean_int_out = TRUE,
+  param1 = 0.5,
+  radius.fact = 2.5,
+  npovs = 100,
+  num.points = 500,
+  start = 0.2,
+  end = 0.8,
+  print.progress = TRUE
+)
 }
 \arguments{
 \item{out.sur}{object of class mesh3d}
@@ -56,7 +66,7 @@ Tool to build 3D and 2D cross sections
 \donttest{
 #raw section on a human femur bone
 data(HomFem38023)
-meshes<-morphomapSegm(HomFem38023)
+meshes<-morphomapSegm(HomFem38023, param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-380.23
@@ -74,7 +84,7 @@ plot3d(rawSections$`3D_inn`[,,1],aspect=FALSE,col="red",type="l",lwd=5,add=TRUE)
 
 #raw section on a chimpanzee femur bone
 data(PanFem27713)
-meshes<-morphomapSegm(PanFem27713)
+meshes<-morphomapSegm(PanFem27713, param1=3)
 perMesh<-meshes$external
 endMesh<-meshes$internal
 mech_length<-277.13

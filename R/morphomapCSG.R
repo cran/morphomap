@@ -40,7 +40,7 @@
 #' \donttest{
 #' #calculation of csg parameter on a human femur cross section
 #' data(HomFem38023)
-#' meshes<-morphomapSegm(HomFem38023)
+#' meshes<-morphomapSegm(HomFem38023, param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-380.23
@@ -73,7 +73,7 @@
 #' 
 #' #calculation of csg parameter on a chimpanzee femur cross section
 #' data(PanFem27713)
-#' meshes<-morphomapSegm(PanFem27713)
+#' meshes<-morphomapSegm(PanFem27713, param1=3)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
 #' mech_length<-277.13
