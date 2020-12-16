@@ -24,7 +24,7 @@
 #' @param vecs numeric: which sections will be plotted. If dims is set on 2 only the first element of the vector vecs is considered
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' #morphomap on a human femur bone
 #' data(HomFem38023)
 #' meshes<-morphomapSegm(HomFem38023)

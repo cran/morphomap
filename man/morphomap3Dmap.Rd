@@ -50,7 +50,7 @@ thickmat thickness matrix after smoothing and outliers removal
 Plot a 3D thickness map in four different anatomical views
 }
 \examples{
-\donttest{
+if(interactive()){
 #morphomap on a human femur bone
 data(HomFem38023)
 meshes<-morphomapSegm(HomFem38023, param1=4)
@@ -71,9 +71,9 @@ bone3Dmap<-morphomap3Dmap(shapeSections, out.sur=perMesh,
                           fac.out=1.5,smooth=TRUE,
                           smooth.iter=5)
 #or
-library(rgl)
-open3d()
-shade3d(perMesh,col=bone3Dmap$cols,specular="black")
+require(rgl)
+rgl::open3d()
+rgl::shade3d(perMesh,col=bone3Dmap$cols,specular="black")
 
 #morphomap on a chimpanzee femur bone
 data(PanFem27713)
@@ -92,9 +92,9 @@ bone3Dmap<-morphomap3Dmap(shapeSections, out.sur=perMesh,
                           fac.out=1.5,smooth=TRUE,
                           smooth.iter=5)
 #or
-library(rgl)
-open3d()
-shade3d(perMesh,col=bone3Dmap$cols,specular="black")
+require(rgl)
+rgl::open3d()
+rgl::shade3d(perMesh,col=bone3Dmap$cols,specular="black")
 }
 }
 \author{

@@ -66,7 +66,7 @@ data input used to build the GAM map
 Create a 2D cortical thickness map
 }
 \examples{
-\donttest{
+if (interactive()){
 library(colorRamps)
 #morphomap on a human femur bone
 data(HomFem38023)

@@ -13,16 +13,16 @@
 #' Raia P., Moggi-Cecchi J. and Manzi G., 2018. Reproducing the internal and external anatomy of fossil bones: Two new automatic digital tools.
 #' American Journal of Physical Anthropology 166(4): 979-986.
 #' @examples
-#' \donttest{
+#' if(interactive()){
 #' #automatic separation of external and medullar femur components
-#' library(rgl)
+#' require(rgl)
 #' data(HomFem38023)
 #' meshes<-morphomapSegm(HomFem38023,param1=4)
 #' perMesh<-meshes$external
 #' endMesh<-meshes$internal
-#' open3d()
-#' wire3d(perMesh,col="grey")
-#' wire3d(endMesh,col="red")
+#' rgl::open3d()
+#' rgl::wire3d(perMesh,col="grey")
+#' rgl::wire3d(endMesh,col="red")
 #' }
 #' @export
 

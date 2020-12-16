@@ -63,7 +63,7 @@ end percentage of the mechanical length from which the last section is defined
 Tool to build 3D and 2D cross sections
 }
 \examples{
-\donttest{
+if(interactive()){
 #raw section on a human femur bone
 data(HomFem38023)
 meshes<-morphomapSegm(HomFem38023, param1=4)
@@ -77,10 +77,12 @@ rawSections<-morphomapCore(out.sur=perMesh,
 plot(rawSections$`2D_out`[,,1],col="grey",asp=1,xlab="x",ylab="y",type="l")
 points(rawSections$`2D_inn`[,,1],col="red",type="l")
 #3D plot of the first section
-library(rgl)
-open3d()
-plot3d(rawSections$`3D_out`[,,1],aspect=FALSE,col="grey",type="l",lwd=5,xlab="x",ylab="y",zlab="z")
-plot3d(rawSections$`3D_inn`[,,1],aspect=FALSE,col="red",type="l",lwd=5,add=TRUE)
+require(rgl)
+rgl::open3d()
+rgl::plot3d(rawSections$`3D_out`[,,1],aspect=FALSE,col="grey",
+type="l",lwd=5,xlab="x",ylab="y",zlab="z")
+rgl::plot3d(rawSections$`3D_inn`[,,1],aspect=FALSE,col="red",
+type="l",lwd=5,add=TRUE)
 
 #raw section on a chimpanzee femur bone
 data(PanFem27713)
@@ -95,10 +97,12 @@ rawSections<-morphomapCore(out.sur=perMesh,
 plot(rawSections$`2D_out`[,,1],col="grey",asp=1,xlab="x",ylab="y",type="l")
 points(rawSections$`2D_inn`[,,1],col="red",type="l")
 #3D plot of the first section
-library(rgl)
-open3d()
-plot3d(rawSections$`3D_out`[,,1],aspect=FALSE,col="grey",type="l",lwd=5,xlab="x",ylab="y",zlab="z")
-plot3d(rawSections$`3D_inn`[,,1],aspect=FALSE,col="red",type="l",lwd=5,add=TRUE)
+require(rgl)
+rgl::open3d()
+rgl::plot3d(rawSections$`3D_out`[,,1],aspect=FALSE,col="grey",
+type="l",lwd=5,xlab="x",ylab="y",zlab="z")
+rgl::plot3d(rawSections$`3D_inn`[,,1],aspect=FALSE,col="red",
+type="l",lwd=5,add=TRUE)
 }
 }
 \author{

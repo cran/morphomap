@@ -22,7 +22,7 @@
 #' @return data input used to build the GAM map
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
-#' \donttest{
+#' if (interactive()){
 #' library(colorRamps)
 #' #morphomap on a human femur bone
 #' data(HomFem38023)

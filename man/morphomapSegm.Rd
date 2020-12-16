@@ -27,16 +27,16 @@ Separate a mesh from its visible and not visible components by using CA-LSE meth
 The result could be affected by the value set in the \code{param1} argument. Before running \code{morphomapCore} please the periosteal and endosteal surfaces.
 }
 \examples{
-\donttest{
+if(interactive()){
 #automatic separation of external and medullar femur components
-library(rgl)
+require(rgl)
 data(HomFem38023)
 meshes<-morphomapSegm(HomFem38023,param1=4)
 perMesh<-meshes$external
 endMesh<-meshes$internal
-open3d()
-wire3d(perMesh,col="grey")
-wire3d(endMesh,col="red")
+rgl::open3d()
+rgl::wire3d(perMesh,col="grey")
+rgl::wire3d(endMesh,col="red")
 }
 }
 \references{

@@ -16,7 +16,7 @@
 #' @return thickmat thickness matrix after smoothing and outliers removal
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
-#' \donttest{
+#' if(interactive()){
 #' #morphomap on a human femur bone
 #' data(HomFem38023)
 #' meshes<-morphomapSegm(HomFem38023, param1=4)
@@ -37,9 +37,9 @@
 #'                           fac.out=1.5,smooth=TRUE,
 #'                           smooth.iter=5)
 #' #or
-#' library(rgl)
-#' open3d()
-#' shade3d(perMesh,col=bone3Dmap$cols,specular="black")
+#' require(rgl)
+#' rgl::open3d()
+#' rgl::shade3d(perMesh,col=bone3Dmap$cols,specular="black")
 #' 
 #' #morphomap on a chimpanzee femur bone
 #' data(PanFem27713)
@@ -58,9 +58,9 @@
 #'                           fac.out=1.5,smooth=TRUE,
 #'                           smooth.iter=5)
 #' #or
-#' library(rgl)
-#' open3d()
-#' shade3d(perMesh,col=bone3Dmap$cols,specular="black")
+#' require(rgl)
+#' rgl::open3d()
+#' rgl::shade3d(perMesh,col=bone3Dmap$cols,specular="black")
 #' }
 #' @export
 
@@ -160,15 +160,15 @@ morphomap3Dmap<-function (morphomap.shape,out.sur,method = "equiangular",
     triangles3d(t(out.sur$vb[1:3, out.sur$it]), col = colls, 
                 specular = "black")
     next3d()
-    out.sur_r <- rotate3d(out.sur, pi/2, 0, 0, 1)
+    out.sur_r <- rgl::rotate3d(out.sur, pi/2, 0, 0, 1)
     triangles3d(t(out.sur_r$vb[1:3, out.sur_r$it]), col = colls, 
                 specular = "black")
     next3d()
-    out.sur_r <- rotate3d(out.sur, pi, 0, 0, 1)
+    out.sur_r <- rgl::rotate3d(out.sur, pi, 0, 0, 1)
     triangles3d(t(out.sur_r$vb[1:3, out.sur_r$it]), col = colls, 
                 specular = "black")
     next3d()
-    out.sur_r <- rotate3d(out.sur, pi * 3/2, 0, 0, 1)
+    out.sur_r <- rgl::rotate3d(out.sur, pi * 3/2, 0, 0, 1)
     triangles3d(t(out.sur_r$vb[1:3, out.sur_r$it]), col = colls, 
                 specular = "black")
   }

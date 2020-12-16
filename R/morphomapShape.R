@@ -60,8 +60,8 @@
 #' @export
 
 morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CCA", 
-                          delta = 0.1, side = "left") 
-{
+                          delta = 0.1, side = "left") {
+  side<-tolower(side)
   mech.len <- morphomap.core$mech_length
   start <- morphomap.core$start
   end <- morphomap.core$end
@@ -90,7 +90,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
                                   num.land)
       ALPM_i <- morphomapRegradius(inn_outline, centroid, 
                                    4)
-      if (side == "right") {
+      if (side == "left") {
         fho <- ids_o[which.min(abs(ids_o - ALPM_o[1])):(which.min(abs(ids_o - 
                                                                         ALPM_o[3])) - 1)]
         sho <- ids_o[which.min(abs(ids_o - ALPM_o[3])):length(ids_o)]
@@ -101,13 +101,13 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
         ALPM_o_tot[, , m] <- out_outline[ALPM_o[c(3, 
                                                   2, 1, 4)], ]
       }
-      else {
+      if (side == "right") {
         ALPM_o_tot[, , m] <- out_outline[ALPM_o, ]
         out_coo_2D[, , m] <- out_outline[ids_o, ]
         out_coo_3D[, , m] <- cbind(out_coo_2D[, , m], 
                                    sect_poi[m])
       }
-      if (side == "right") {
+      if (side == "left") {
         fhi <- ids_i[which.min(abs(ids_i - ALPM_i[1])):(which.min(abs(ids_i - 
                                                                         ALPM_i[3])) - 1)]
         shi <- ids_i[which.min(abs(ids_i - ALPM_i[3])):length(ids_i)]
@@ -118,7 +118,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
         ALPM_i_tot[, , m] <- inn_outline[ALPM_i[c(3, 
                                                   2, 1, 4)], ]
       }
-      else {
+      if (side == "right")  {
         ALPM_i_tot[, , m] <- inn_outline[ALPM_i, ]
         inn_coo_2D[, , m] <- inn_outline[ids_i, ]
         inn_coo_3D[, , m] <- cbind(inn_coo_2D[, , m], 
@@ -130,7 +130,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
                                   num.land)
       ALPM_o <- morphomapRegradius(out_outline, colMeans(out_outline), 
                                    4)
-      if (side == "right") {
+      if (side == "left") {
         fho <- ids_o[which.min(abs(ids_o - ALPM_o[1])):(which.min(abs(ids_o - 
                                                                         ALPM_o[3])) - 1)]
         sho <- ids_o[which.min(abs(ids_o - ALPM_o[3])):length(ids_o)]
@@ -141,7 +141,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
         ALPM_o_tot[, , m] <- out_outline[ALPM_o[c(3, 
                                                   2, 1, 4)], ]
       }
-      else {
+      if (side == "right")  {
         ALPM_o_tot[, , m] <- out_outline[ALPM_o, ]
         out_coo_2D[, , m] <- out_outline[ids_o, ]
         out_coo_3D[, , m] <- cbind(out_coo_2D[, , m], 
@@ -151,7 +151,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
                                   num.land)
       ALPM_i <- morphomapRegradius(inn_outline, colMeans(out_outline), 
                                    4)
-      if (side == "right") {
+      if (side == "left") {
         fhi <- ids_i[which.min(abs(ids_i - ALPM_i[1])):(which.min(abs(ids_i - 
                                                                         ALPM_i[3])) - 1)]
         shi <- ids_i[which.min(abs(ids_i - ALPM_i[3])):length(ids_i)]
@@ -162,7 +162,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
         ALPM_i_tot[, , m] <- inn_outline[ALPM_i[c(3, 
                                                   2, 1, 4)], ]
       }
-      else {
+      if (side == "right")  {
         ALPM_i_tot[, , m] <- inn_outline[ALPM_i, ]
         inn_coo_2D[, , m] <- inn_outline[ids_i, ]
         inn_coo_3D[, , m] <- cbind(inn_coo_2D[, , m], 
@@ -174,7 +174,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
                                   num.land)
       ALPM_o <- morphomapRegradius(out_outline, colMeans(inn_outline), 
                                    4)
-      if (side == "right") {
+      if (side == "left") {
         fho <- ids_o[which.min(abs(ids_o - ALPM_o[1])):(which.min(abs(ids_o - 
                                                                         ALPM_o[3])) - 1)]
         sho <- ids_o[which.min(abs(ids_o - ALPM_o[3])):length(ids_o)]
@@ -185,7 +185,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
         ALPM_o_tot[, , m] <- out_outline[ALPM_o[c(3, 
                                                   2, 1, 4)], ]
       }
-      else {
+      if (side == "right")  {
         ALPM_o_tot[, , m] <- out_outline[ALPM_o, ]
         out_coo_2D[, , m] <- out_outline[ids_o, ]
         out_coo_3D[, , m] <- cbind(out_coo_2D[, , m], 
@@ -195,7 +195,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
                                   num.land)
       ALPM_i <- morphomapRegradius(inn_outline, colMeans(inn_outline), 
                                    4)
-      if (side == "right") {
+      if (side == "left") {
         fhi <- ids_i[which.min(abs(ids_i - ALPM_i[1])):(which.min(abs(ids_i - 
                                                                         ALPM_i[3])) - 1)]
         shi <- ids_i[which.min(abs(ids_i - ALPM_i[3])):length(ids_i)]
@@ -206,7 +206,7 @@ morphomapShape<-function (morphomap.core, num.land, sects_vector, cent.out = "CC
         ALPM_i_tot[, , m] <- inn_outline[ALPM_i[c(3, 
                                                   2, 1, 4)], ]
       }
-      else {
+      if (side == "right")  {
         ALPM_i_tot[, , m] <- inn_outline[ALPM_i, ]
         inn_coo_2D[, , m] <- inn_outline[ids_i, ]
         inn_coo_3D[, , m] <- cbind(inn_coo_2D[, , m], 

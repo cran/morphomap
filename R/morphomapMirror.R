@@ -5,15 +5,15 @@
 #' @return mesh: object of class mesh3d
 #' @author Antonio Profico, Luca Bondioli, Pasquale Raia, Paul O'Higgins, Damiano Marchi
 #' @examples
-#' \donttest{
+#' if(interactive()){
 #' #a left human femur bone
-#' library(rgl)
+#' require(rgl)
 #' data(HomFem38023)
 #' lfem<-HomFem38023
 #' rfem<-morphomapMirror(lfem)
-#' open3d()
-#' wire3d(lfem,col="green")
-#' wire3d(rfem,col="red")
+#' rgl::open3d()
+#' rgl::wire3d(lfem,col="green")
+#' rgl::ire3d(rfem,col="red")
 #' }
 #' @export
 

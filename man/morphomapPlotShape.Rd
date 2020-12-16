@@ -75,7 +75,7 @@ morphomapPlotShape(
 Visualize 2D and 3D cross sections
 }
 \examples{
-\dontrun{
+if(interactive()){
 #morphomap on a human femur bone
 data(HomFem38023)
 meshes<-morphomapSegm(HomFem38023)
