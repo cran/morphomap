@@ -1,7 +1,7 @@
 Package: morphomap
 Type: Package
 Title: Morphometric Maps, Bone Landmarking and Cross Sectional Geometry
-Version: 1.3
+Version: 1.4
 Authors@R: c(
 	person(given="Antonio", family="Profico",email = "antonio.profico@gmail.com", role=c("aut", "cre")),
 	person(given="Luca", family="Bondioli", role=c("aut")),
@@ -10,7 +10,7 @@ Authors@R: c(
 	person(given="Paul", family="O'Higgins", role=c("aut")),
 	person(given="Damiano", family="Marchi", role=c("aut")))
 Description: Extract cross sections from long bone meshes at specified intervals along the diaphysis. Calculate two and three-dimensional morphometric maps, cross-sectional geometric parameters, and semilandmarks on the periosteal and endosteal contours of each cross section. 
-Depends: R (>= 3.4.0)
+Depends: R (>= 3.5.0)
 Imports: Arothron (>= 1.0), lattice (>= 0.2), mgcv (>= 1.8), Rvcg (>=
         0.18), Morpho (>= 2.0), oce (>= 1.1), rgdal (>= 1.4), raster
         (>= 3.0), sp (>= 1.3), geometry (>= 0.4.0), rgl (>= 0.1),
@@ -19,9 +19,9 @@ Imports: Arothron (>= 1.0), lattice (>= 0.2), mgcv (>= 1.8), Rvcg (>=
 License: GPL-2
 Encoding: UTF-8
 LazyLoad: yes
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2020-12-16 18:58:00 UTC; anton
+Packaged: 2023-02-01 21:32:40 UTC; anton
 Author: Antonio Profico [aut, cre],
   Luca Bondioli [aut],
   Pasquale Raia [aut],
@@ -30,4 +30,4 @@ Author: Antonio Profico [aut, cre],
   Damiano Marchi [aut]
 Maintainer: Antonio Profico <antonio.profico@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-12-16 19:50:02 UTC
+Date/Publication: 2023-02-01 21:50:02 UTC

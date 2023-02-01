@@ -150,5 +150,6 @@ morphomap2Dmap<-function (morphomap.shape,rem.out = FALSE,
   if(gamMap==FALSE){
   out <- list(dataframe = mat, `2Dmap` = map,gamoutput=NULL,data=data)}
 
+  return(out)
   
 }

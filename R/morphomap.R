@@ -18,12 +18,12 @@
 #' @import utils
 #' @importFrom colorRamps blue2green2red
 #' @importFrom grDevices dev.off tiff
-#' @importFrom rgl open3d layout3d triangles3d next3d rotate3d rotationMatrix wire3d axis3d title3d rgl.bbox par3d view3d planes3d spheres3d lines3d
+#' @importFrom rgl open3d layout3d triangles3d next3d rotate3d rotationMatrix wire3d axis3d title3d bbox3d par3d view3d planes3d spheres3d lines3d
 #' @importFrom oce matrixSmooth
 #' @importFrom sp point.in.polygon CRS
 #' @importFrom raster raster flip writeRaster 
 #' @importFrom graphics plot points polygon text
-#' @importFrom stats IQR quantile sd weighted.mean dist
+#' @importFrom stats IQR quantile sd weighted.mean dist prcomp
 #' @importFrom utils setTxtProgressBar txtProgressBar
 NULL
 

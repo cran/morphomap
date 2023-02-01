@@ -19,7 +19,7 @@ morphomapCheck<-function(mesh,col="white"){
   axis3d('y', pos = c(0, NA, 0),lwd=5,col="green")
   axis3d('z', pos = c(0, 0, NA),lwd=5,col="blue")
   title3d(main=NULL,xlab="X axis",zlab="Z (Biomechanical length)")
-  rgl.bbox()
+  bbox3d()
   view3d(userMatrix=rotationMatrix(pi, 1, 0, 1),fov=0)
   U <- par3d("userMatrix")
   par3d(userMatrix = rotate3d(U, pi, 0,0,1))
