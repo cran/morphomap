@@ -39,7 +39,7 @@ morphomapPCA<-function(mpShapeList,gamMap = TRUE,nrow = 61,ncol = 24,
   if(length(unique(unlist(lapply(mpShapeList, function(x) dim(x$`3D_out`)[1]))))!=1){
     stop("the number of cross-sections is different")
   }
-  if(isFALSE(gamMap)){nrow<-nland; ncol=nrows}
+  if(isFALSE(gamMap)){nrow<-nrows; ncol<-nland}
   ThickMat<-array(NA,dim=c(nrow,ncol,length(mpShapeList)))
   for(i in 1:dim(ThickMat)[3]){
     map2Di<-morphomap2Dmap(mpShapeList[[i]],rem.out = rem.out,scale = scaleThick,fac.out = fac.out,gamMap = gamMap,nrow = nrow,ncol = ncol,

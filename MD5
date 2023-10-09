@@ -1,9 +1,9 @@
-27c070761eeb791b61aa9cec52e88cb9 *DESCRIPTION
-63faf759ff8cd45481b16a09ab16f349 *NAMESPACE
+00007a6d3a8f0e18e9068aedc1efbe1d *DESCRIPTION
+ebf9c13e78067da973b043065e6bb9f2 *NAMESPACE
 79d85fb018fb77ad45145531b98fcddc *R/Ex_mpShapeList.R
 2af6f43bc05cbeb800b274ad3f0dc6ac *R/HomFem38023.R
 5dad4d9f1fab3f3982003b86c17bb4c9 *R/PanFem27713.R
-70807ab06517224b72559d1e0938d35a *R/morphomap.R
+d9ad09e4f8f09cf0920f76e32d9882d9 *R/morphomap.R
 31327350909bf43862ef484605c0299b *R/morphomap2Dmap.R
 44641a7d4a8153c9a646272525cda7cf *R/morphomap3Dmap.R
 56be7ea779d1b240ea70cf2bdf79ae61 *R/morphomapAlignment.R
@@ -21,10 +21,9 @@ f2d2a41a56bb19e4443de03cf1df4c6c *R/morphomapExport.R
 d16596b1a4e1b6c4fe010b9e6923c8a2 *R/morphomapMatrix2array.R
 857d29afda658676c69a0e155e63fe6a *R/morphomapMirror.R
 4a6323bdca09b0c93c5cf18fc01cd0f9 *R/morphomapMoment.R
-c587b1df51b099b3d01bda0090925d6b *R/morphomapPCA.R
+be21451c5ce40b9175368c72c996f0ea *R/morphomapPCA.R
 5b4b92560a5b2a00d0c4a71849d95346 *R/morphomapPic.R
 6b025a8041522c0e5c862093cd1cebfc *R/morphomapPlotShape.R
-2524c9ffb4ba4af648fcc632d94b4c20 *R/morphomapRaster.R
 68066f10bd32767f64b7d4c507798c0c *R/morphomapReadMorphologika.R
 e072de353dfc45607453d35d8d9216e0 *R/morphomapRectangle.R
 9f94f8624e251f2f4544ae9c7d0e6b20 *R/morphomapRegradius.R
@@ -67,7 +66,6 @@ fb088f9704ad08b410d41a8ee6aff040 *man/morphomapMoment.Rd
 4d28c027eaf8f7b0662d8f7556e0b1db *man/morphomapPCA.Rd
 a066bde30798b9bcd7759fb544040c18 *man/morphomapPic.Rd
 897d65d5552a638473bdc05792f964cf *man/morphomapPlotShape.Rd
-9336940f0dba0bef714020ab88a680a7 *man/morphomapRaster.Rd
 3120407f2125b3787283f548c8820cf0 *man/morphomapReadMorphologika.Rd
 885436191a754121ee8eb698d54b92cb *man/morphomapRectangle.Rd
 aa7a053420cdef18ee19bc0139a6a12b *man/morphomapRegradius.Rd
